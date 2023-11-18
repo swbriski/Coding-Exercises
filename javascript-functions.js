@@ -244,6 +244,7 @@ console.log(helloWorld())       // Hello World!
 
 const pluralizer = (number, noun) => {
 
+    // Creates an array of the noun's vowels so evaluations for consonants can be performed
     let vowelArray = noun.toLowerCase().split("").filter(vowel => {
         return (
             vowel === "a" || 
