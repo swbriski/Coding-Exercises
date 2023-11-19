@@ -303,57 +303,51 @@ const pluralizer = (number, noun) => {
     }
 }
 
-
-console.log(pluralizer(6, "aircraft"))      // 6 aircraft
-console.log(pluralizer(2, "CATTLE"))        // 2 cattle
-console.log(pluralizer(1, "Deer"))          // 1 deer
-console.log(pluralizer(8, "fish"))          // 8 fish
-console.log(pluralizer(7, "moose"))         // 7 moose
-console.log(pluralizer(0, "SHEEP"))         // 0 sheep
-console.log(pluralizer(1, "Trout"))         // 1 trout
-console.log(pluralizer(2, "child"))         // 2 children
-console.log(pluralizer(1, "Child"))         // 1 child
-console.log(pluralizer(8, "foot"))          // 8 feet
-console.log(pluralizer(1, "FOOT"))          // 1 foot
-console.log(pluralizer(0, "GOOSE"))         // 0 geese
-console.log(pluralizer(1, "goose"))         // 1 goose
-console.log(pluralizer(2, "man"))           // 2 men
-console.log(pluralizer(1, "MAN"))           // 1 man
-console.log(pluralizer(8, "mouse"))         // 8 mice
-console.log(pluralizer(1, "Mouse"))         // 1 mouse
-console.log(pluralizer(2, "person"))        // 2 people
-console.log(pluralizer(1, "Person"))        // 1 person
-console.log(pluralizer(8, "tooth"))         // 8 teeth
-console.log(pluralizer(1, "TOOTH"))         // 1 tooth
-console.log(pluralizer(0, "woman"))         // 0 women
-console.log(pluralizer(1, "Woman"))         // 1 woman
-console.log(pluralizer(6, "class"))         // 6 classes
-console.log(pluralizer(2, "FLASH"))         // 2 flashes
-console.log(pluralizer(1, "Ditch"))         // 1 ditch
-console.log(pluralizer(8, "box"))           // 8 boxes
-console.log(pluralizer(7, "FIZZ"))          // 7 fizzes
-console.log(pluralizer(1, "quiz"))          // 1 quiz
-console.log(pluralizer(6, "Quiz"))          // 6 quizzes
-console.log(pluralizer(1, "Wife"))          // 1 wife
-console.log(pluralizer(6, "WIFE"))          // 6 wives
-console.log(pluralizer(8, "Elf"))           // 8 elves
-console.log(pluralizer(1, "ELF"))           // 1 elf
-console.log(pluralizer(2, "Leaf"))          // 2 leaves
-console.log(pluralizer(1, "LEAF"))          // 1 leaf
-console.log(pluralizer(8, "LOAF"))          // 8 loaves
-console.log(pluralizer(1, "Loaf"))          // 1 loaf
-console.log(pluralizer(0, "WOLF"))          // 0 wolves
-console.log(pluralizer(1, "Wolf"))          // 1 wolf
-console.log(pluralizer(6, "CITY"))          // 6 cities
-console.log(pluralizer(1, "City"))          // 1 city
-console.log(pluralizer(8, "Auto"))          // 8 autos
-console.log(pluralizer(1, "AUTO"))          // 1 auto
-console.log(pluralizer(2, "PIANO"))         // 2 pianos
-console.log(pluralizer(1, "Piano"))         // 1 piano
-console.log(pluralizer(8, "Solo"))          // 8 solos
-console.log(pluralizer(1, "SOLO"))          // 1 solo
-console.log(pluralizer(0, "Tomato"))        // 0 tomatoes
-console.log(pluralizer(1, "TOMATO"))        // 1 tomato
-console.log(pluralizer(5, "cat"))           // 5 cats
+// Single Noun
+console.log(pluralizer(1, "DOG"))           // 1 dog
+console.log(pluralizer(1, "Dog"))           // 1 dog
 console.log(pluralizer(1, "dog"))           // 1 dog
+// Plural Rule: Same As Singular
+console.log(pluralizer(6, "AIRCRAFT"))      // 6 aircraft
+console.log(pluralizer(2, "CATTLE"))        // 2 cattle
+console.log(pluralizer(8, "FISH"))          // 8 fish
+console.log(pluralizer(7, "MOOSE"))         // 7 moose
+console.log(pluralizer(0, "SHEEP"))         // 0 sheep
+console.log(pluralizer(2, "TROUT"))         // 2 trout
+// Plural Rule: Special Pairs
+console.log(pluralizer(2, "CHILD"))         // 2 children
+console.log(pluralizer(8, "FOOT"))          // 8 feet
+console.log(pluralizer(0, "GOOSE"))         // 0 geese
+console.log(pluralizer(10, "MAN"))          // 10 men
+console.log(pluralizer(8, "MOUSE"))         // 8 mice
+console.log(pluralizer(2, "PERSON"))        // 2 people
+console.log(pluralizer(8, "TOOTH"))         // 8 teeth
+console.log(pluralizer(10, "WOMAN"))        // 10 women
+// Plural Rule: Ends in S, SH, CH, X, or ZZ
+console.log(pluralizer(6, "CLASS"))         // 6 classes
+console.log(pluralizer(2, "FLASH"))         // 2 flashes
+console.log(pluralizer(2, "DITCH"))         // 2 ditches
+console.log(pluralizer(8, "BOX"))           // 8 boxes
+console.log(pluralizer(7, "FIZZ"))          // 7 fizzes
+// Plural Rule: Ends in Z
+console.log(pluralizer(6, "QUIZ"))          // 6 quizzes
+// Plural Rule: Ends in FE or is elf, leaf, loaf, wolf
+console.log(pluralizer(9, "life"))          // 9 lives
+console.log(pluralizer(9, "lIFE"))          // 9 lives
+console.log(pluralizer(0, "Elf"))           // 0 elves
+console.log(pluralizer(2, "Leaf"))          // 2 leaves
+console.log(pluralizer(8, "LOAF"))          // 8 loaves
+console.log(pluralizer(2, "WOLF"))          // 2 wolves
+// Plural Rule: Ends in CONSONANT + Y
+console.log(pluralizer(6, "CITY"))          // 6 cities
+console.log(pluralizer(5, "City"))          // 5 cities
+// Plural Rule: CONSONANT + O Exceptions
+console.log(pluralizer(8, "Auto"))          // 8 autos
+console.log(pluralizer(2, "PIANO"))         // 2 pianos
+console.log(pluralizer(8, "Solo"))          // 8 solos
+// Plural Rule: Ends in CONSONANT + O
+console.log(pluralizer(0, "Tomato"))        // 0 tomatoes
+console.log(pluralizer(0, "TOMATO"))        // 0 tomatoes
+// Plural Rule: General Rule
+console.log(pluralizer(5, "cat"))           // 5 cats
 console.log(pluralizer(9, "Dog"))           // 9 dogs
